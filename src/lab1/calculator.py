@@ -1,5 +1,5 @@
-import tkinter
-from tkinter import ttk
+import tkinter as tk
+import tkinter.ttk as ttk
 from math import sqrt
 
 
@@ -42,63 +42,63 @@ class Calculator:
 
     def button_click(self, number):
         current = self.number_entry.get()
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
         self.number_entry.insert(0, str(current) + str(number))
 
     def button_clear(self):
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
     def button_plus(self):
         first_number = self.number_entry.get()
         self.last_command = "plus"
         self.f_num = float(first_number)
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
     def button_minus(self):
         first_number = self.number_entry.get()
         self.last_command = "minus"
         self.f_num = float(first_number)
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
     def button_multiply(self):
         first_number = self.number_entry.get()
         self.last_command = "multiply"
         self.f_num = float(first_number)
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
     def button_div(self):
         first_number = self.number_entry.get()
         self.last_command = "div"
         self.f_num = float(first_number)
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
     def button_round_div(self):
         first_number = self.number_entry.get()
         self.last_command = "round_div"
         self.f_num = float(first_number)
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
     def button_square(self):
         number = float(self.number_entry.get())
         result = number**2
         if result % 1 == 0:
             result = int(result)
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
         self.number_entry.insert(0, result)
 
     def button_sqrt(self):
         number = float(self.number_entry.get())
         result = sqrt(number)
         if result % 1 == 0:
-            self.number_entry.delete(0, tkinter.END)
+            self.number_entry.delete(0, tk.END)
             self.number_entry.insert(0, int(result))
         else:
-            self.number_entry.delete(0, tkinter.END)
+            self.number_entry.delete(0, tk.END)
             self.number_entry.insert(0, result)
 
     def button_calculate(self):
         second_number = self.number_entry.get()
-        self.number_entry.delete(0, tkinter.END)
+        self.number_entry.delete(0, tk.END)
 
         if self.last_command == "plus":
             self.number_entry.insert(0, self.f_num + float(second_number))
@@ -117,6 +117,6 @@ class Calculator:
 
 
 if __name__ == '__main__':
-    root = tkinter.Tk()
+    root = tk.Tk()
     calculator1 = Calculator(root)
     root.mainloop()

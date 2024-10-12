@@ -9,10 +9,13 @@ def is_prime(n: int) -> bool:
     >>> is_prime(8)
     False
     """
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+    if n == 1:
+        return False
+    else:
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
 
 
 def generate_keypair(p: int, q: int) -> tuple[tuple[int, int], tuple[int, int]]:
@@ -59,14 +62,14 @@ def multiplicative_inverse(e: int, phi: int) -> int:
     23
     """
 
-    def extended_gcd(a, b):
-        if a == 0:
-            return b, 0, 1
-        else:
-            gcd, x, y = extended_gcd(b % a, a)
-            return gcd, y - (b // a) * x, x
-
     gcd, x, y = extended_gcd(e, phi)
     if gcd == 1:
         return x % phi
     raise ValueError("Inverse don't exist")
+
+def extended_gcd(a, b):
+    if a == 0:
+        return b, 0, 1
+    else:
+        gcd, x, y = extended_gcd(b % a, a)
+        return gcd, y - (b // a) * x, x

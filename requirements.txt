@@ -9,3 +9,5 @@ httpretty==1.0.2
 tqdm==4.52.0
 networkx==2.5
 python-louvain==0.14
+tk-tools==0.16.0
+tk==0.1.0
