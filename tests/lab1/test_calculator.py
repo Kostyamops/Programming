@@ -1,5 +1,7 @@
 import unittest
 
+import src.lab1.calculator
+
 class CalculatorTestCase(unittest.TestCase):
 
     # Тест для проверки работы, можно удалить

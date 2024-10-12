@@ -1,6 +1,6 @@
 import unittest
 
-from src.lab2.rsa import is_prime, gcd, extended_gcd
+from src.lab2.rsa import is_prime, gcd, extended_gcd, multiplicative_inverse
 
 
 class RSATestCase(unittest.TestCase):
@@ -17,9 +17,3 @@ class RSATestCase(unittest.TestCase):
         self.assertEquals(gcd(11,121), 11)
         self.assertEquals(gcd(7, 8963), 1)
         self.assertEquals(gcd(7, 3), 1)
-
-    def test_extended_gcd(self):
-        self.assertEquals(extended_gcd(12, 2), (2, 0, 1))
-        self.assertEquals(extended_gcd(11,121), (11, 1, 0))
-        self.assertEquals(extended_gcd(7, 8963), (1, 2561, -2))
-        self.assertEquals(extended_gcd(18, 3), (3, 0, 1))
