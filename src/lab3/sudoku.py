@@ -7,7 +7,7 @@ import typing as tp
 T = tp.TypeVar("T")
 
 
-def read(path: tp.Union[str, pathlib.Path]) -> tp.List[tp.List[str]]:
+def read_sudoku(path: tp.Union[str, pathlib.Path]) -> tp.List[tp.List[str]]:
     """Прочитать Судоку из указанного файла"""
     path = pathlib.Path(path)
     with path.open() as f:
@@ -255,7 +255,7 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
 
 
 def run_solve(fname):
-    grid = read(fname)
+    grid = read_sudoku(fname)
     start = time.time()
     solve(grid)
     end = time.time()
@@ -263,6 +263,6 @@ def run_solve(fname):
 
 
 if __name__ == "__main__":
-    for fname in ("puzzle1.txt"):
+    for fname in ("puzzle1.txt", "puzzle2.txt", "puzzle3.txt"):
         p = multiprocessing.Process(target=run_solve, args=(fname,))
         p.start()
