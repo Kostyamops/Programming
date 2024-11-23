@@ -1,6 +1,6 @@
 import unittest
 
-from src.lab2.caesar import encrypt_caesar, decrypt_caesar
+from src.lab_2.caesar import encrypt_caesar, decrypt_caesar
 
 
 class CaesarTestCase(unittest.TestCase):

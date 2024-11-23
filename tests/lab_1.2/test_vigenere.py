@@ -2,7 +2,7 @@ import string
 import unittest
 import random
 
-from src.lab2.vigenere import encrypt_vigenere, decrypt_vigenere
+from src.lab_2.vigenere import encrypt_vigenere, decrypt_vigenere
 
 
 class VigenereTestCase(unittest.TestCase):

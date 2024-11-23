@@ -1,6 +1,6 @@
 import unittest
 
-from src.lab2.rsa import is_prime, gcd, extended_gcd, multiplicative_inverse
+from src.lab_2.rsa import is_prime, gcd, extended_gcd, multiplicative_inverse
 
 
 class RSATestCase(unittest.TestCase):
