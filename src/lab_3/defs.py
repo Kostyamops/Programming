@@ -2,7 +2,7 @@ import io
 
 
 def read_file(path):
-    with io.open(path, "r", encoding='utf-8') as file:
+    with io.open(path, "r", encoding='UTF-8') as file:
         line = file.readline()
         a = []
         while line != "END":
@@ -15,7 +15,7 @@ def read_file(path):
     return a
 
 def read_file_task1(path):
-    with open(path, "r") as file:
+    with io.open(path, "r", encoding='UTF-8') as file:
         a = []
         line = file.readline()
         while line != "END":
@@ -25,7 +25,7 @@ def read_file_task1(path):
     return a
 
 def write_file(path, output):
-    with open(path, "w") as file:
+    with open(path, "w", encoding='UTF-8') as file:
         for i in output:
             file.write(str(i))
             file.write("\n")

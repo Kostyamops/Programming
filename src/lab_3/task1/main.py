@@ -37,11 +37,11 @@ if __name__ == "__main__":
 
     # user_history = [2, 4]
 
-    list1 = read_file("../../../txtf/lab_3/task1/movies_example.txt")
+    list1 = read_file("../../../txtf/lab_3/task1/movies20.txt")
     movies = [Movie(f"{list1[i]}") for i in range(0, len(list1))]  # Создаем массив из объектов класса
     # print(*movies)
 
-    users = sorted(read_file_task1("../../../txtf/lab_3/task1/history_example.txt"))
+    users = sorted(read_file_task1("../../../txtf/lab_3/task1/history_generated.txt"))
 
     for i in users:
         for j in range(len(i)):

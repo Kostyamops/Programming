@@ -28,13 +28,14 @@ def get_intervals(lst):
     duplicated_list.insert(0, 0)
     duplicated_list.append(123)
     lst = list(zip(duplicated_list[::2], duplicated_list[1::2]))
-
+    print(lst)
     return lst
 
 
 def get_group(intervals, value):
     for i, (low, high) in enumerate(intervals, start=0):
         if low <= value <= high:
+            print(value, i)
             return i
     return -1
 
@@ -54,7 +55,7 @@ def output(people, intervals):
             group_list = [str(people[i])]
             group_start = int(people[i].group)
     if group_list != []:
-        start = (str(intervals[group_start][0]) + "-" + str(intervals[group_start+1][1]) + ": ")
+        start = (str(intervals[group_start][0]) + "-" + str(intervals[group_start][1]) + ": ")
         ending = str(', '.join(map(str, group_list)))
         print(start + ending)
 
